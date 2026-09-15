@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Cpu, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Sparkles } from 'lucide-react';
 import { profile } from '../data/profile';
 
 export const HeroProfileImage: React.FC = () => {
@@ -94,10 +94,10 @@ export const HeroProfileImage: React.FC = () => {
           <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent pointer-events-none" />
         </div>
 
-        {/* Floating Top Badge - Positioned safely for mobile screens */}
-        <div className="absolute -top-3 left-1 sm:-left-3 z-20 flex items-center gap-1.5 px-3 py-1 sm:py-1.5 rounded-full bg-dark-900/95 border border-dark-700 text-[11px] sm:text-xs font-mono text-slate-200 shadow-xl backdrop-blur-md animate-float group-hover:border-sky-400/50 transition-colors">
-          <Cpu className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-          <span>Computer Vision &bull; AI</span>
+        {/* Floating Top Badge: Sainadh V hovering on top of photo */}
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-dark-900/95 border border-dark-700 text-xs font-semibold text-white shadow-xl backdrop-blur-md animate-float group-hover:border-sky-400/50 transition-all whitespace-nowrap">
+          <Sparkles className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+          <span>{profile.name}</span>
         </div>
 
         {/* Floating Status Badge - Positioned safely for mobile screens */}
