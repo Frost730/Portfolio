@@ -90,6 +90,102 @@
   animation: floatSmoothDelayed 5s ease-in-out 1.5s infinite;
 }
 
+/* Simple and Smooth Digital Background Glitch Transitions */
+@keyframes glitchScanline {
+  0% {
+    transform: translateY(-20vh);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes glitchSlice1 {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-14px);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 0.45;
+  }
+  80% {
+    transform: translateX(-3px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitchSlice2 {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(14px);
+    opacity: 0.6;
+  }
+  55% {
+    transform: translateX(-8px);
+    opacity: 0.4;
+  }
+  80% {
+    transform: translateX(3px);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitchFlash {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-glitch-scanline {
+  animation: glitchScanline 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-glitch-slice-1 {
+  animation: glitchSlice1 0.38s ease-out forwards;
+}
+
+.animate-glitch-slice-2 {
+  animation: glitchSlice2 0.42s ease-out forwards;
+}
+
+.animate-glitch-flash {
+  animation: glitchFlash 0.36s ease-out forwards;
+}
+
+
 
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {

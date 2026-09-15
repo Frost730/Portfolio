@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -10,6 +10,7 @@ import { Certifications } from './components/Certifications';
 import { GithubSection } from './components/GithubSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { BackgroundGlitch } from './components/BackgroundGlitch';
 
 import { projects } from './data/projects';
 import type { Project } from './types';
@@ -18,15 +19,25 @@ export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
+  const [glitchTrigger, setGlitchTrigger] = useState(0);
 
-  // Active section observer for Navbar scroll spy
+  const triggerGlitch = useCallback(() => {
+    setGlitchTrigger((prev) => prev + 1);
+  }, []);
+
+  // Active section observer for Navbar scroll spy & smooth section transition glitch
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            setActiveSection((prev) => {
+              if (prev !== entry.target.id) {
+                setGlitchTrigger((g) => g + 1);
+              }
+              return entry.target.id;
+            });
           }
         });
       },
@@ -64,13 +75,19 @@ export const App: React.FC = () => {
     : projects.filter((p) => p.filterCategories.includes(selectedCategory));
 
   return (
-    <div className="min-h-screen bg-dark-950 text-slate-100 flex flex-col selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="relative min-h-screen bg-dark-950 text-slate-100 flex flex-col selection:bg-cyan-500/20 selection:text-cyan-300">
       
+      {/* Subtle, Smooth Digital Background Glitch Animation on Navigation */}
+      <BackgroundGlitch trigger={glitchTrigger} />
+
       {/* Sticky Header */}
-      <Navbar activeSection={activeSection} />
+      <Navbar 
+        activeSection={activeSection} 
+        onNavigate={triggerGlitch} 
+      />
 
       {/* Main Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {/* 1. Hero Section */}
         <Hero />
 
