@@ -1,0 +1,20 @@
+﻿<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100%\" height=\"100%\">
+  <defs>
+    <linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">
+      <stop offset=\"0%\" stop-color=\"#00f2fe\" />
+      <stop offset=\"100%\" stop-color=\"#3b82f6\" />
+    </linearGradient>
+  </defs>
+  <rect width=\"100\" height=\"100\" rx=\"24\" fill=\"#06080d\" />
+  <rect x=\"4\" y=\"4\" width=\"92\" height=\"92\" rx=\"20\" fill=\"none\" stroke=\"#1c2537\" stroke-width=\"2\" />
+  
+  <!-- Vision Reticle Crosshairs -->
+  <path d=\"M 18 30 L 18 18 L 30 18\" fill=\"none\" stroke=\"#00f2fe\" stroke-width=\"3\" stroke-linecap=\"round\" />
+  <path d=\"M 70 18 L 82 18 L 82 30\" fill=\"none\" stroke=\"#00f2fe\" stroke-width=\"3\" stroke-linecap=\"round\" />
+  <path d=\"M 18 70 L 18 82 L 30 82\" fill=\"none\" stroke=\"#00f2fe\" stroke-width=\"3\" stroke-linecap=\"round\" />
+  <path d=\"M 70 82 L 82 82 L 82 70\" fill=\"none\" stroke=\"#00f2fe\" stroke-width=\"3\" stroke-linecap=\"round\" />
+
+  <!-- Monogram SV -->
+  <text x=\"50\" y=\"62\" font-family=\"monospace, sans-serif\" font-size=\"36\" font-weight=\"900\" fill=\"url(#grad)\" text-anchor=\"middle\" letter-spacing=\"-1\">SV</text>
+  <circle cx=\"74\" cy=\"26\" r=\"4\" fill=\"#10b981\" />
+</svg>

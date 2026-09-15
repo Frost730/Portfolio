@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-dark-950 text-slate-200 font-sans antialiased selection:bg-sky-500/20 selection:text-sky-300 overflow-x-hidden;
+    min-height: 100vh;
+    letter-spacing: -0.01em;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Optimize touch responsiveness and eliminate mobile 300ms tap delay */
+  a, button, input, textarea, select, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  /* Minimalist modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08090d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f2737;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e3b52;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(13, 16, 23, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(56, 189, 248, 0.15);
+  }
+
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400;
+  }
+
+  /* Defer rendering off-screen sections until scrolled into view for instant initial FCP */
+  .section-render-opt {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
+  }
+}
+
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes floatSmoothDelayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(7px); }
+}
+
+.animate-float {
+  animation: floatSmooth 4.5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSmoothDelayed 5s ease-in-out 1.5s infinite;
+}
+
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
