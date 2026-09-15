@@ -5,7 +5,7 @@ import { GithubIcon } from './SocialIcons';
 
 export const GithubSection: React.FC = () => {
   return (
-    <section className="py-20 relative bg-dark-900/30 border-t border-dark-800" aria-label="Built in Public">
+    <section className="py-20 relative" aria-label="Built in Public">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-dark-900 border border-dark-750 p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-md">
           

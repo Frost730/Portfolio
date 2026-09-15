@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative bg-dark-900/40 border-t border-dark-800 text-left section-render-opt" aria-label="Contact">
+    <section id="contact" className="py-20 relative text-left section-render-opt" aria-label="Contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-dark-950 border-t border-dark-800 text-left pt-14 pb-10" aria-label="Footer">
+    <footer className="relative z-10 text-left pt-14 pb-10" aria-label="Footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}

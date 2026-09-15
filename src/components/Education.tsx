@@ -4,7 +4,7 @@ import { GraduationCap, Calendar } from 'lucide-react';
 
 export const Education: React.FC = () => {
   return (
-    <section id="education" className="py-20 relative bg-dark-900/30 border-t border-dark-800 text-left section-render-opt" aria-label="Education">
+    <section id="education" className="py-20 relative text-left section-render-opt" aria-label="Education">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

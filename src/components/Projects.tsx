@@ -60,7 +60,7 @@ export const Projects: React.FC<ProjectsProps> = ({
   return (
     <section 
       id="projects" 
-      className="py-24 relative bg-dark-900/30 border-t border-dark-800 text-left section-render-opt"
+      className="py-24 relative text-left section-render-opt"
       aria-label="Projects Portfolio"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

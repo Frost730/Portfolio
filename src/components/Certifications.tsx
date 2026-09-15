@@ -4,7 +4,7 @@ import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const Certifications: React.FC = () => {
   return (
-    <section id="certifications" className="py-20 relative bg-dark-950 border-t border-dark-800 text-left" aria-label="Certifications">
+    <section id="certifications" className="py-20 relative text-left" aria-label="Certifications">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

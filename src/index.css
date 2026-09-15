@@ -90,99 +90,73 @@
   animation: floatSmoothDelayed 5s ease-in-out 1.5s infinite;
 }
 
-/* Simple and Smooth Digital Background Glitch Transitions */
-@keyframes glitchScanline {
+/* Organic Aurora Borealis Animations */
+@keyframes auroraDrift1 {
   0% {
-    transform: translateY(-20vh);
-    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 0.28;
   }
-  25% {
-    opacity: 0.5;
+  33% {
+    transform: translate3d(5vw, -4vh, 0) rotate(8deg) scale(1.15);
+    opacity: 0.42;
+  }
+  66% {
+    transform: translate3d(-4vw, 6vh, 0) rotate(-6deg) scale(0.92);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 0.28;
+  }
+}
+
+@keyframes auroraDrift2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1.1);
+    opacity: 0.22;
+  }
+  40% {
+    transform: translate3d(-6vw, 5vh, 0) rotate(-10deg) scale(0.95);
+    opacity: 0.38;
   }
   75% {
-    opacity: 0.3;
+    transform: translate3d(4vw, -5vh, 0) rotate(7deg) scale(1.2);
+    opacity: 0.20;
   }
   100% {
-    transform: translateY(110vh);
-    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1.1);
+    opacity: 0.22;
   }
 }
 
-@keyframes glitchSlice1 {
+@keyframes auroraDrift3 {
   0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  20% {
-    transform: translateX(-14px);
-    opacity: 0.65;
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
   }
   50% {
-    transform: translateX(10px);
+    transform: translate3d(3vw, 8vh, 0) scale(1.25);
     opacity: 0.45;
   }
-  80% {
-    transform: translateX(-3px);
-    opacity: 0.2;
-  }
   100% {
-    transform: translateX(0);
-    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
   }
 }
 
-@keyframes glitchSlice2 {
-  0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  25% {
-    transform: translateX(14px);
-    opacity: 0.6;
-  }
-  55% {
-    transform: translateX(-8px);
-    opacity: 0.4;
-  }
-  80% {
-    transform: translateX(3px);
-    opacity: 0.15;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
+.animate-aurora-1 {
+  animation: auroraDrift1 22s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  will-change: transform, opacity;
 }
 
-@keyframes glitchFlash {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0.4;
-  }
-  70% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0;
-  }
+.animate-aurora-2 {
+  animation: auroraDrift2 28s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  will-change: transform, opacity;
 }
 
-.animate-glitch-scanline {
-  animation: glitchScanline 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-glitch-slice-1 {
-  animation: glitchSlice1 0.38s ease-out forwards;
-}
-
-.animate-glitch-slice-2 {
-  animation: glitchSlice2 0.42s ease-out forwards;
-}
-
-.animate-glitch-flash {
-  animation: glitchFlash 0.36s ease-out forwards;
+.animate-aurora-3 {
+  animation: auroraDrift3 34s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  will-change: transform, opacity;
 }
 
 

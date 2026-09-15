@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -10,7 +10,7 @@ import { Certifications } from './components/Certifications';
 import { GithubSection } from './components/GithubSection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { BackgroundGlitch } from './components/BackgroundGlitch';
+import { AuroraBackground } from './components/AuroraBackground';
 
 import { projects } from './data/projects';
 import type { Project } from './types';
@@ -19,25 +19,15 @@ export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
-  const [glitchTrigger, setGlitchTrigger] = useState(0);
 
-  const triggerGlitch = useCallback(() => {
-    setGlitchTrigger((prev) => prev + 1);
-  }, []);
-
-  // Active section observer for Navbar scroll spy & smooth section transition glitch
+  // Active section observer for Navbar scroll spy
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection((prev) => {
-              if (prev !== entry.target.id) {
-                setGlitchTrigger((g) => g + 1);
-              }
-              return entry.target.id;
-            });
+            setActiveSection(entry.target.id);
           }
         });
       },
@@ -77,13 +67,12 @@ export const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-dark-950 text-slate-100 flex flex-col selection:bg-cyan-500/20 selection:text-cyan-300">
       
-      {/* Subtle, Smooth Digital Background Glitch Animation on Navigation */}
-      <BackgroundGlitch trigger={glitchTrigger} />
+      {/* Smooth Organic Aurora Background Animation */}
+      <AuroraBackground />
 
       {/* Sticky Header */}
       <Navbar 
         activeSection={activeSection} 
-        onNavigate={triggerGlitch} 
       />
 
       {/* Main Content Area */}

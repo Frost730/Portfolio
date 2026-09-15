@@ -28,7 +28,7 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 relative bg-dark-900/30 border-t border-dark-800 section-render-opt" aria-label="Technical Skills">
+    <section id="skills" className="py-24 relative section-render-opt" aria-label="Technical Skills">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         
         {/* Section Header */}
