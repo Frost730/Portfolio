@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { QuickMetrics } from './components/QuickMetrics';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
-import { FlagshipProjects } from './components/FlagshipProjects';
-import { LiveProjects } from './components/LiveProjects';
-import { AdditionalProjects } from './components/AdditionalProjects';
-import { ProjectFilter } from './components/ProjectFilter';
+import { Projects } from './components/Projects';
 import { ProjectModal } from './components/ProjectModal';
 import { Education } from './components/Education';
 import { Certifications } from './components/Certifications';
@@ -41,16 +37,6 @@ export const App: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Flagship projects (Layer 1)
-  const studyPilot = projects.find((p) => p.id === 'studypilot')!;
-  const trafficSign = projects.find((p) => p.id === 'traffic-sign-detection')!;
-
-  // Live deployed projects (Layer 2)
-  const liveProjects = projects.filter((p) => p.layer === 2);
-
-  // Additional projects (Layer 3)
-  const additionalProjects = projects.filter((p) => p.layer === 3);
-
   // Categories list for filtering
   const filterCategories = [
     'All',
@@ -72,17 +58,10 @@ export const App: React.FC = () => {
     return acc;
   }, {} as Record<string, number>);
 
-  // Filtered lists for the project showcase
-  const filteredLive = selectedCategory === 'All'
-    ? liveProjects
-    : liveProjects.filter((p) => p.filterCategories.includes(selectedCategory));
-
-  const filteredAdditional = selectedCategory === 'All'
-    ? additionalProjects
-    : additionalProjects.filter((p) => p.filterCategories.includes(selectedCategory));
-
-  const showFlagships = selectedCategory === 'All' || 
-    (trafficSign.filterCategories.includes(selectedCategory) || studyPilot.filterCategories.includes(selectedCategory));
+  // Filtered project list for unified showcase
+  const filteredProjects = selectedCategory === 'All'
+    ? projects
+    : projects.filter((p) => p.filterCategories.includes(selectedCategory));
 
   return (
     <div className="min-h-screen bg-dark-950 text-slate-100 flex flex-col selection:bg-cyan-500/20 selection:text-cyan-300">
@@ -95,68 +74,36 @@ export const App: React.FC = () => {
         {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. YOLOv8n Metrics Strip */}
-        <QuickMetrics />
-
-        {/* 3. About Section */}
+        {/* 2. About Section */}
         <About />
 
-        {/* 4. Skills Section */}
+        {/* 3. Skills Section */}
         <Skills />
 
-        {/* Unified Project Showcase Area */}
-        <div id="projects-container" className="relative pt-12">
-          
-          {/* Filtering Controls */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ProjectFilter
-              categories={filterCategories}
-              activeCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-              categoryCounts={categoryCounts}
-            />
-          </div>
+        {/* 4. Unified Projects Section */}
+        <Projects
+          projects={filteredProjects}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+          categories={filterCategories}
+          categoryCounts={categoryCounts}
+          onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
+        />
 
-          {/* 5. Flagship Projects (Layer 1) */}
-          {showFlagships && (
-            <FlagshipProjects
-              studyPilot={studyPilot}
-              trafficSign={trafficSign}
-              onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
-            />
-          )}
-
-          {/* 6. Live Deployed Projects (Layer 2) */}
-          {filteredLive.length > 0 && (
-            <LiveProjects
-              projects={filteredLive}
-              onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
-            />
-          )}
-
-          {/* 7. Additional Projects (Layer 3) */}
-          {filteredAdditional.length > 0 && (
-            <AdditionalProjects
-              projects={filteredAdditional}
-              onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
-            />
-          )}
-        </div>
-
-        {/* 8. Education Section */}
+        {/* 5. Education Section */}
         <Education />
 
-        {/* 9. Certifications Section */}
+        {/* 6. Certifications Section */}
         <Certifications />
 
-        {/* 10. Built in Public / GitHub Section */}
+        {/* 7. Built in Public / GitHub Section */}
         <GithubSection />
 
-        {/* 11. Contact Section */}
+        {/* 8. Contact Section */}
         <Contact />
       </main>
 
-      {/* 12. Footer */}
+      {/* 9. Footer */}
       <Footer />
 
       {/* Interactive Case Study Modal */}

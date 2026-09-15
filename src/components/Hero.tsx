@@ -82,8 +82,8 @@ export const Hero: React.FC = () => {
             {/* Hero CTAs: Clean & Fluid */}
             <div className="flex flex-wrap items-center gap-3 pt-3 w-full sm:w-auto">
               <a
-                href="#featured"
-                onClick={(e) => handleScrollTo(e, '#featured')}
+                href="#projects"
+                onClick={(e) => handleScrollTo(e, '#projects')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-slate-950 bg-slate-100 hover:bg-white transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 group"
               >
                 <span>Explore My Projects</span>

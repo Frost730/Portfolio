@@ -11,8 +11,7 @@ export const Footer: React.FC = () => {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Flagship Projects', href: '#featured' },
-    { label: 'Live Apps', href: '#live-projects' },
+    { label: 'Projects', href: '#projects' },
     { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ];
