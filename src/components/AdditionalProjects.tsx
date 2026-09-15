@@ -82,7 +82,7 @@ export const AdditionalProjects: React.FC<AdditionalProjectsProps> = ({
                 </div>
               </div>
 
-              {/* Action Buttons (Strictly verified: no fake live demo) */}
+              {/* Action Buttons */}
               <div className="pt-4 border-t border-dark-800 flex items-center justify-between">
                 {project.github && (
                   <a

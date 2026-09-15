@@ -40,7 +40,7 @@ export const Certifications: React.FC = () => {
                 </p>
                 <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 mt-3">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Verified Curriculum</span>
+                  <span>Completed Coursework</span>
                 </div>
               </div>
             </div>

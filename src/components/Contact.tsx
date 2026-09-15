@@ -187,7 +187,7 @@ export const Contact: React.FC = () => {
                   <span>Curriculum Vitae</span>
                 </h4>
                 <p className="text-xs text-slate-300 mt-0.5">
-                  M.Sc. CS &bull; Verified projects &amp; academic history
+                  M.Sc. Computer Science &bull; Academic &amp; Project Portfolio
                 </p>
               </div>
 

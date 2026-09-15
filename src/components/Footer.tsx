@@ -108,8 +108,8 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <span>&copy; {new Date().getFullYear()} Sainadh V. All rights reserved.</span>
-            <span className="hidden sm:inline text-slate-400">&bull;</span>
-            <span className="text-slate-400">Verified resume &amp; GitHub source data</span>
+            <span className="hidden sm:inline text-slate-500">&bull;</span>
+            <span className="text-slate-400">Machine Learning &amp; Computer Vision</span>
           </div>
 
           <button

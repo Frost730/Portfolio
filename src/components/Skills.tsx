@@ -44,11 +44,6 @@ export const Skills: React.FC = () => {
               Hands-on experience demonstrated through academic research, computer vision projects, and deployed web applications.
             </p>
           </div>
-
-          <div className="text-xs font-mono text-slate-400 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>Honest representation &bull; Zero fake percentages</span>
-          </div>
         </div>
 
         {/* Skills Grid */}
@@ -98,8 +93,8 @@ export const Skills: React.FC = () => {
 
               {/* Bottom Line */}
               <div className="mt-6 pt-3 border-t border-dark-800 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                <span>VERIFIED</span>
-                <span className="text-slate-400">PRACTICAL USAGE</span>
+                <span>{category.skills.length} Competencies</span>
+                <span className="text-slate-400">Production &bull; Research</span>
               </div>
             </div>
           ))}

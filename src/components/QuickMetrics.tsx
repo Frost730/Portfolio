@@ -24,7 +24,7 @@ export const QuickMetrics: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
           <div>
             <div className="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold mb-1">
-              Verified Model Evaluation Metrics
+              Model Evaluation Metrics
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               YOLOv8n Traffic Sign Detection Benchmark

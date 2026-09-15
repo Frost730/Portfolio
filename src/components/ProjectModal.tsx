@@ -127,7 +127,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {project.metrics && project.metrics.length > 0 && (
             <div className="p-5 rounded-2xl bg-dark-950 border border-dark-800">
               <h3 className="text-xs font-mono uppercase text-sky-400 tracking-wider mb-3 font-semibold flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5" /> Verified Performance Metrics
+                <Zap className="w-3.5 h-3.5" /> Key Performance Metrics
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {project.metrics.map((m) => (
