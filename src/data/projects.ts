@@ -116,13 +116,74 @@ export const projects: Project[] = [
       ]
     }
   },
+  {
+    id: 'multilink',
+    number: '03',
+    title: 'MultiLink',
+    subtitle: 'Multi-Network Download Manager',
+    category: 'FastAPI  |  React  |  Systems  |  Networking',
+    tagline: 'Windows-first download manager dynamically scheduling parallel HTTP Range requests across physical network adapters (Ethernet, Wi-Fi, USB Tethering) with sparse file assembly.',
+    description:
+      'An intelligent, high-throughput Windows download manager featuring an interactive React telemetry dashboard and an asynchronous Python/FastAPI engine. MultiLink dynamically fragments large HTTP transfers into ranges, scheduling chunks across multiple physical and virtual network adapters in real time, backed by persistent SQLite state, sparse file streaming, and strict SSRF defenses.',
+    layer: 1,
+    tags: ['FastAPI', 'React', 'Python', 'TypeScript', 'Tailwind CSS', 'WebSocket', 'SQLite', 'AsyncIO', 'Recharts'],
+    filterCategories: ['Full Stack', 'Data / Analytics'],
+    github: 'https://github.com/Frost730/Multi_Link',
+    live: null,
+    featured: true,
+    metrics: [
+      { label: 'Architecture', value: 'Decoupled', description: 'FastAPI async engine + React live WebSocket dashboard' },
+      { label: 'Storage Engine', value: 'Sparse File', description: 'Direct-to-disk chunk assembly preventing RAM exhaustion on 50GB+ downloads' },
+      { label: 'Scheduling', value: 'Adaptive', description: 'Bandwidth-weighted work stealing and automatic interface failover' },
+      { label: 'Integrity', value: 'SHA-256', description: 'End-to-end streaming cryptographic checksum verification' }
+    ],
+    keyFeatures: [
+      'Windows Adapter Discovery: Discovers Ethernet, Wi-Fi, USB Tethering, and virtual adapters with link speed and operational status.',
+      'True Socket Binding & Detection: Binds sockets to adapter IPv4 addresses with automatic fallback detection between bonded and multi-connection modes.',
+      'Adaptive Dynamic Scheduler: Continuously weights chunk distribution based on real-time moving-average throughput and work stealing.',
+      'Persistent Pause & Resume: SQLite database tracking unfinished byte ranges allowing seamless resume after closing or system reboot.',
+      'Sparse File Direct Assembler: Streams ranges directly to disk via sparse file seeking, avoiding memory bloat even for 50 GB+ files.',
+      'Real-Time WebSocket Telemetry: Rolling throughput charts, interface telemetry, and live interactive chunk progress visualizer.',
+      'SSRF & Path Traversal Guards: Restricts downloads from loopback, private subnets, and sanitizes filenames against Windows reserved device names.'
+    ],
+    architecture: {
+      overview: 'High-performance asynchronous decoupled architecture with an event-driven engine and real-time WebSocket state distribution.',
+      flow: [
+        'Download Target URL & HTTP Range Probing',
+        'Windows Adapter Discovery (psutil & Socket Binding)',
+        'Adaptive Scheduler (Bandwidth-Weighted Chunk Allocation)',
+        'Parallel Asynchronous Worker Pool (aiohttp / httpx)',
+        'Sparse File Assembler (.multilink.part Streaming Writer)',
+        'Real-Time WebSocket Telemetry & React Visualizer',
+        'Streaming SHA-256 Verification & Atomic Finalization'
+      ]
+    },
+    details: {
+      problem:
+        'Standard web browsers and generic downloaders utilize a single TCP connection over a single default network route, leaving secondary adapters (such as mobile tethering or secondary Wi-Fi/Ethernet) completely idle during massive file transfers.',
+      solution:
+        'MultiLink dynamically discovers all active network adapters, probes the target server for HTTP Range capability, and splits the file into chunks dynamically scheduled across available interfaces according to live throughput, with automatic work stealing on interface drop.',
+      implementation: [
+        'FastAPI async backend orchestrating chunk scheduling, adapter socket binding, and WebSocket telemetry broadcasting.',
+        'aiosqlite database engine persisting byte range progress, chunks, and download statuses for instant pause/resume.',
+        'Sparse file direct-to-disk streaming writer eliminating RAM bottlenecks when downloading multi-gigabyte files.',
+        'React and TypeScript frontend featuring Recharts live throughput graphs and an interactive chunk progress grid.',
+        'Comprehensive pytest test suite validating SSRF protection, sparse assembly, scheduler scoring, and live integration.'
+      ],
+      technicalHighlights: [
+        'Engineered safe per-adapter socket binding without requiring kernel drivers or permanent routing table edits.',
+        'Sparse file chunk assembly with streaming SHA-256 verification and atomic file renaming upon completion.',
+        'Standalone Windows desktop build pipeline utilizing PyInstaller to produce a portable native MultiLink.exe.'
+      ]
+    }
+  },
 
   // ==========================================
   // LAYER 2: LIVE DEPLOYED APPLICATIONS
   // ==========================================
   {
     id: 'cineanime-vault',
-    number: '03',
+    number: '04',
     title: 'CineAnime Vault',
     subtitle: 'Media & Anime Watchlist Manager',
     category: 'React  |  TypeScript  |  Media Management',
@@ -161,7 +222,7 @@ export const projects: Project[] = [
   },
   {
     id: 'gamevault',
-    number: '04',
+    number: '05',
     title: 'GameVault',
     subtitle: 'Gaming Library & Backlog Dashboard',
     category: 'React  |  TypeScript  |  Data Visualization',
@@ -200,7 +261,7 @@ export const projects: Project[] = [
   },
   {
     id: 'personal-expense-tracker',
-    number: '05',
+    number: '06',
     title: 'Personal Expense Tracker',
     subtitle: 'Private Financial Dashboard',
     category: 'React  |  TypeScript  |  Financial Analytics',
@@ -239,7 +300,7 @@ export const projects: Project[] = [
   },
   {
     id: 'flappy-bird-remastered',
-    number: '06',
+    number: '07',
     title: 'Flappy Bird Remastered',
     subtitle: 'Arcade Canvas Game with Web Audio',
     category: 'React  |  TypeScript  |  Canvas  |  Game Development',
@@ -282,7 +343,7 @@ export const projects: Project[] = [
   // ==========================================
   {
     id: 'careflow-kiosk',
-    number: '07',
+    number: '08',
     title: 'CareFlow Kiosk',
     subtitle: 'Patient Check-In Kiosk & Admin Portal',
     category: 'FastAPI  |  SQLite  |  React',

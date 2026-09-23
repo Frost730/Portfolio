@@ -54,6 +54,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Vite' },
       { name: 'Tailwind CSS', highlight: true },
       { name: 'FastAPI', highlight: true },
+      { name: 'WebSocket', highlight: true },
+      { name: 'AsyncIO' },
       { name: 'SQLite', highlight: true },
       { name: 'SQLAlchemy' },
       { name: 'Chart.js' },
