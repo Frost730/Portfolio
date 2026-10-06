@@ -13,6 +13,7 @@ import {
   Eye,
   Brain,
   Network,
+  Share2,
   CheckCircle2, 
   BarChart3,
   ArrowUpRight,
@@ -45,6 +46,8 @@ export const Projects: React.FC<ProjectsProps> = ({
         return <Brain className="w-5 h-5 text-indigo-400" />;
       case 'multilink':
         return <Network className="w-5 h-5 text-cyan-400" />;
+      case 'lan-bridge':
+        return <Share2 className="w-5 h-5 text-indigo-400" />;
       case 'cineanime-vault':
         return <Film className="w-5 h-5 text-sky-400" />;
       case 'gamevault':

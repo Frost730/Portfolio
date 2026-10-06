@@ -177,13 +177,73 @@ export const projects: Project[] = [
       ]
     }
   },
+  {
+    id: 'lan-bridge',
+    number: '04',
+    title: 'LANBridge',
+    subtitle: 'High-Speed P2P File Transfer & Device Collaboration',
+    category: 'WebRTC  |  FastAPI  |  React  |  P2P Systems',
+    tagline: 'Zero-cloud, high-speed local and cross-network file transfer platform using WebRTC DataChannels, FastAPI, and 32-bit binary stream multiplexing.',
+    description:
+      'A private, browser-based peer-to-peer file transfer and device collaboration application engineered for wire-speed performance. LANBridge enables phones, laptops, and workstations across any OS to stream files and entire directory trees directly to one another without third-party cloud storage, featuring WebRTC DataChannels, dynamic chunked HTTP fallback, 32-bit binary stream multiplexing, temporary rooms, and end-to-end cryptographic verification.',
+    layer: 1,
+    tags: ['WebRTC', 'FastAPI', 'React', 'TypeScript', 'Tailwind CSS', 'Python', 'WebSocket', 'P2P', 'PWA'],
+    filterCategories: ['Full Stack', 'Frontend'],
+    github: 'https://github.com/Frost730/LAN_Bridge',
+    live: 'https://lan-bridge.onrender.com/',
+    featured: true,
+    metrics: [
+      { label: 'Transport', value: 'WebRTC P2P', description: 'Zero-cloud browser-to-browser RTCDataChannel transfer with HTTP chunk streaming fallback' },
+      { label: 'Concurrency', value: '32-Bit Mux', description: 'Binary stream multiplexing allowing concurrent multi-file transfers without packet collisions' },
+      { label: 'Integrity', value: 'SHA-256', description: 'End-to-end streaming cryptographic hash calculation verifying every transfer' },
+      { label: 'Privacy', value: 'Zero Cloud', description: '100% ephemeral data flow with automatic instant file shredding on download' }
+    ],
+    keyFeatures: [
+      'WebRTC P2P + HTTP Streaming: Direct browser-to-browser data transfer with automatic fallback to high-speed chunked HTTP streaming.',
+      'Binary Stream Multiplexing: 32-bit stream multiplexing supporting simultaneous multi-file uploads and downloads without collisions.',
+      'Full Recursive Folder Transfers: Preserves complex nested directory structures and relative paths with client-side ZIP fallback.',
+      'Temporary Rooms: Create and share 1-click room links to transfer files across distinct Wi-Fi networks and mobile data.',
+      'Live Speed & Dynamic ETA: Real-time sliding-window throughput telemetry and accurate estimated time remaining calculations.',
+      'Resumable Chunk Recovery: Recovers interrupted transfers by persisting verified chunks and resuming from the exact missing byte offset.',
+      'Device Pairing & Security: QR code and 6-digit PIN pairing approval, strict path traversal sanitization, and ephemeral file shredding.'
+    ],
+    architecture: {
+      overview: 'Hybrid peer-to-peer and relayed event-driven streaming architecture designed for zero cloud exposure.',
+      flow: [
+        'Device Discovery & Temporary Room Joining (WebSocket Signaling)',
+        'Host Pairing Handshake (QR Code / 6-Digit Approval)',
+        'WebRTC ICE Candidate Exchange & RTCDataChannel Negotiation',
+        'Direct P2P Binary Stream Multiplexing (or Chunked HTTP Relay)',
+        'Sliding-Window Throughput & Dynamic ETA Telemetry',
+        'Streaming SHA-256 Checksum Validation',
+        'Direct Folder Reconstruction & Ephemeral File Shredding'
+      ]
+    },
+    details: {
+      problem:
+        'Transferring large files and complex folder hierarchies between dissimilar operating systems (e.g. Windows PC to iPhone or Android to Mac) typically requires third-party cloud storage, account logins, slow internet bandwidth usage, or privacy-invasive apps.',
+      solution:
+        'LANBridge creates an instant, zero-install local and cross-network bridge in the browser. Devices connect via WebRTC data channels for direct device-to-device transfers, completely bypassing third-party cloud servers with wire-speed throughput.',
+      implementation: [
+        'FastAPI backend powering WebSocket room signaling, device presence heartbeats, and chunked HTTP relay fallback.',
+        'Modern React 19 client with Tailwind CSS, touch-optimized bottom sheets, and native OS notifications.',
+        'Custom WebRTC RTCDataChannel manager orchestrating 32-bit chunk headers and concurrent multiplexed streams.',
+        'Streaming SHA-256 cryptographic pipeline calculating hashes on the fly prior to atomic disk persistence.'
+      ],
+      technicalHighlights: [
+        'Zero-cloud design ensuring files never touch third-party databases, with automatic server shredding for relay chunks.',
+        'Full nested folder transfer support preserving directory hierarchies across operating systems.',
+        'Deployed live on Render with full responsive PWA mobile and desktop support.'
+      ]
+    }
+  },
 
   // ==========================================
   // LAYER 2: LIVE DEPLOYED APPLICATIONS
   // ==========================================
   {
     id: 'cineanime-vault',
-    number: '04',
+    number: '05',
     title: 'CineAnime Vault',
     subtitle: 'Media & Anime Watchlist Manager',
     category: 'React  |  TypeScript  |  Media Management',
@@ -222,7 +282,7 @@ export const projects: Project[] = [
   },
   {
     id: 'gamevault',
-    number: '05',
+    number: '06',
     title: 'GameVault',
     subtitle: 'Gaming Library & Backlog Dashboard',
     category: 'React  |  TypeScript  |  Data Visualization',
@@ -261,7 +321,7 @@ export const projects: Project[] = [
   },
   {
     id: 'personal-expense-tracker',
-    number: '06',
+    number: '07',
     title: 'Personal Expense Tracker',
     subtitle: 'Private Financial Dashboard',
     category: 'React  |  TypeScript  |  Financial Analytics',
@@ -300,7 +360,7 @@ export const projects: Project[] = [
   },
   {
     id: 'flappy-bird-remastered',
-    number: '07',
+    number: '08',
     title: 'Flappy Bird Remastered',
     subtitle: 'Arcade Canvas Game with Web Audio',
     category: 'React  |  TypeScript  |  Canvas  |  Game Development',
@@ -343,7 +403,7 @@ export const projects: Project[] = [
   // ==========================================
   {
     id: 'careflow-kiosk',
-    number: '08',
+    number: '09',
     title: 'CareFlow Kiosk',
     subtitle: 'Patient Check-In Kiosk & Admin Portal',
     category: 'FastAPI  |  SQLite  |  React',
