@@ -182,24 +182,24 @@ export const projects: Project[] = [
     number: '04',
     title: 'LANBridge',
     subtitle: 'High-Speed P2P File Transfer & Device Collaboration',
-    category: 'WebRTC  |  FastAPI  |  React  |  Cloud Deployed',
-    tagline: 'Cloud-deployed high-speed file transfer and collaboration platform hosted live on Render, featuring direct WebRTC DataChannels, FastAPI signaling, and 32-bit binary stream multiplexing.',
+    category: 'WebRTC  |  FastAPI  |  React  |  Cloud & Self-Hosted',
+    tagline: 'High-speed P2P file transfer and collaboration platform deployed live on Render, with full support for 100% offline self-hosted local LAN deployments via Docker.',
     description:
-      'A production-ready, cloud-hosted peer-to-peer file transfer and device collaboration application deployed live on Render. LANBridge enables phones, laptops, and workstations across any OS to stream files and entire directory trees directly to one another via WebRTC DataChannels with fallback chunked HTTP streaming, 32-bit binary stream multiplexing, temporary rooms, and end-to-end cryptographic verification without permanent file storage in external databases.',
+      'A production-ready peer-to-peer file transfer and device collaboration application deployed live on Render and fully capable of 100% offline self-hosting on private local networks. LANBridge enables phones, laptops, and workstations across any OS to stream files and entire directory trees directly to one another via WebRTC DataChannels with fallback chunked HTTP streaming, 32-bit binary stream multiplexing, temporary rooms, and end-to-end cryptographic verification — whether accessed in the cloud or self-hosted in an isolated LAN.',
     layer: 1,
-    tags: ['WebRTC', 'FastAPI', 'React', 'TypeScript', 'Tailwind CSS', 'Python', 'WebSocket', 'Render Cloud', 'PWA'],
+    tags: ['WebRTC', 'FastAPI', 'React', 'TypeScript', 'Tailwind CSS', 'Python', 'Docker', 'Render Cloud', 'Self-Hosted', 'PWA'],
     filterCategories: ['Full Stack', 'Frontend'],
     github: 'https://github.com/Frost730/LAN_Bridge',
     live: 'https://lan-bridge.onrender.com/',
     featured: true,
     metrics: [
-      { label: 'Deployment', value: 'Render Cloud', description: 'Production webapp and FastAPI signaling service hosted live on Render.com' },
+      { label: 'Deployment', value: 'Cloud / Self-Host', description: 'Hosted live on Render.com with full Docker self-hosting support for private local networks' },
       { label: 'Transport', value: 'WebRTC P2P', description: 'Direct browser-to-browser RTCDataChannel transfer with HTTP chunk streaming fallback' },
       { label: 'Concurrency', value: '32-Bit Mux', description: 'Binary stream multiplexing allowing concurrent multi-file transfers without packet collisions' },
-      { label: 'Privacy', value: 'Ephemeral P2P', description: 'Direct peer data flow with instant automatic file shredding upon transfer completion' }
+      { label: 'Privacy', value: 'Zero Retention', description: 'Direct peer data flow with instant automatic file shredding upon transfer completion' }
     ],
     keyFeatures: [
-      'Cloud-Deployed on Render: Hosted live with global availability, automatic SSL, and zero client installation required.',
+      'Dual Cloud & Self-Hosted Flexibility: Accessible instantly on Render.com with zero setup, or self-hosted via Docker for complete air-gapped offline LAN privacy.',
       'WebRTC P2P + HTTP Streaming: Direct browser-to-browser data transfer with automatic fallback to high-speed chunked HTTP streaming.',
       'Binary Stream Multiplexing: 32-bit stream multiplexing supporting simultaneous multi-file uploads and downloads without collisions.',
       'Full Recursive Folder Transfers: Preserves complex nested directory structures and relative paths with client-side ZIP fallback.',
@@ -208,9 +208,9 @@ export const projects: Project[] = [
       'Device Pairing & Security: QR code and 6-digit PIN pairing approval, strict path traversal sanitization, and ephemeral file shredding.'
     ],
     architecture: {
-      overview: 'Cloud-deployed hybrid peer-to-peer streaming architecture combining Render-hosted FastAPI signaling with direct browser-to-browser WebRTC data pipes.',
+      overview: 'Hybrid peer-to-peer streaming architecture supporting both Render cloud signaling for global access and isolated self-hosted LAN deployments.',
       flow: [
-        'Device Discovery & Temporary Room Joining (Render WebSocket Signaling)',
+        'Device Discovery & Temporary Room Joining (Render WebSocket or Local LAN Signaling)',
         'Host Pairing Handshake (QR Code / 6-Digit Approval)',
         'WebRTC ICE Candidate Exchange & RTCDataChannel Negotiation',
         'Direct P2P Binary Stream Multiplexing (or Chunked HTTP Relay)',
@@ -223,15 +223,15 @@ export const projects: Project[] = [
       problem:
         'Transferring large files and complex folder hierarchies between dissimilar operating systems (e.g. Windows PC to iPhone or Android to Mac) typically requires third-party cloud storage accounts, slow internet upload quotas, or proprietary privacy-invasive utilities.',
       solution:
-        'LANBridge provides a cloud-deployed web application hosted on Render that creates instant local and cross-network peer-to-peer rooms in the browser. Devices connect via WebRTC data channels for direct device-to-device transfers at wire-speed throughput without permanent server file storage.',
+        'LANBridge provides a flexible web portal — available live on Render or self-hosted locally — that creates instant peer-to-peer rooms in the browser. Devices connect via WebRTC data channels for direct device-to-device transfers at wire-speed throughput without permanent server storage.',
       implementation: [
-        'FastAPI backend deployed on Render powering WebSocket room signaling, device presence heartbeats, and chunked HTTP relay fallback.',
+        'FastAPI backend powering WebSocket room signaling, device presence heartbeats, and chunked HTTP relay fallback.',
         'Modern React 19 client with Tailwind CSS, touch-optimized bottom sheets, and native OS notifications.',
         'Custom WebRTC RTCDataChannel manager orchestrating 32-bit chunk headers and concurrent multiplexed streams.',
         'Streaming SHA-256 cryptographic pipeline calculating hashes on the fly prior to atomic disk persistence.'
       ],
       technicalHighlights: [
-        'Containerized and deployed live on Render with automatic HTTPS and global edge routing.',
+        'Dual deployment versatility: hosted live in the cloud on Render, or self-hosted completely offline using Docker.',
         'Direct WebRTC P2P data flow with automatic server shredding for temporary relay chunks on completion.',
         'Full nested folder transfer support preserving directory hierarchies across operating systems.'
       ]
